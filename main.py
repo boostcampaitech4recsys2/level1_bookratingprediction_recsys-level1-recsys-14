@@ -100,7 +100,8 @@ def main(args):
         # predicts  = model.predict(data['test_dataloader'])
         predicts_warm  = model.predict_warm(data['warm_test_dataloader'], idx2user, idx2isbn)
         predicts_cold  = model.predict_cold(data['cold_test_dataloader'], idx2user, idx2isbn) 
-        predicts = predicts_warm + predicts_cold
+        predicts_warm.update(predicts_cold)
+        predicts = predicts_warm
     else:
         pass
 
@@ -109,6 +110,9 @@ def main(args):
     submission = pd.read_csv(args.DATA_PATH + 'sample_submission.csv')
     if args.MODEL in ('FM', 'FFM', 'NCF', 'WDN', 'DCN', 'CNN_FM', 'DeepCoNN', 'HYBRID'):
         submission['rating'] = predicts
+    elif args.MODEL == 'HYBRID':
+        for i in range(len(submission)):
+            submission['rating'][i] = predicts[(submission['user_id'][i], submission['isbn'][i])]
     else:
         pass
 

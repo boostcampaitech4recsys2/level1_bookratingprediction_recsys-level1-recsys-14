@@ -84,23 +84,30 @@ class HybridNeuralCollaborativeFiltering:
     
     def predict_warm(self, dataloader, idx2user, idx2isbn):
         self.model.eval()
-        predicts = list()
+        predicts = dict()
         with torch.no_grad():
             for fields in tqdm.tqdm(dataloader, smoothing=0, mininterval=1.0):
                 fields = fields[0].to(self.device)
                 y = self.model(fields)
-                predicts.extend(y.tolist())
+                y_idx = 0
+                for f in fields:
+                    user_id = idx2user[f[0].item()]
+                    isbn = idx2isbn[f[1].item()]
+                    predicts[(user_id, isbn)] = y[y_idx].item()
+                    y_idx += 1
         return predicts
     
     
     def predict_cold(self, dataloader, idx2user, idx2isbn):
         self.model.eval()
-        predicts = list()
+        predicts = dict()
         with torch.no_grad():
             for fields in tqdm.tqdm(dataloader, smoothing=0, mininterval=1.0):
                 fields = fields[0].to(self.device)
-                y = torch.tensor([6.93] * len(fields))
-                predicts.extend(y.tolist())
+                for f in fields:
+                    user_id = idx2user[f[0].item()]
+                    isbn = idx2isbn[f[1].item()]
+                    predicts[(user_id, isbn)] = 7.069714
         return predicts
 
 

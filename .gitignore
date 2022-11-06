@@ -1,2 +1,15 @@
-code/
 .empty/
+QA/
+code/data/images/
+code/data/text_vector/
+.ipynb_checkpoints/
+.DS_Store
+qa.ipynb
+read_data.ipynb
+exper_logs/
+exper_logs2/
+exper_logs3/
+submit/
+models/
+__pycache__/
+data/

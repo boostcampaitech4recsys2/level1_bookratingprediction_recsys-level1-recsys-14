@@ -1,0 +1,30 @@
+#!/bin/bash
+
+for DEEPCONN_EMBED_DIM in 8 16 32
+
+do
+
+for DEEPCONN_LATENT_DIM in 8 16 32
+
+do
+
+for DEEPCONN_CONV_1D_OUT_DIM in 8 16 32
+
+do
+
+for WEIGHT_DECAY in 1e-6 1e-5 1e-4
+
+do
+
+	python3 /opt/ml/input/code/main.py --MODEL DeepCoNN --BATCH_SIZE 128 --EPOCHS 100 --LR 0.01 --DEEPCONN_EMBED_DIM ${DEEPCONN_EMBED_DIM} --DEEPCONN_LATENT_DIM ${DEEPCONN_LATENT_DIM} --DEEPCONN_CONV_1D_OUT_DIM ${DEEPCONN_CONV_1D_OUT_DIM} --WEIGHT_DECAY ${WEIGHT_DECAY}
+
+done
+
+done
+
+done
+
+done
+
+done
+

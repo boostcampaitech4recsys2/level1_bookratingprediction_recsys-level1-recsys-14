@@ -3,14 +3,10 @@
 ![image](https://user-images.githubusercontent.com/80964004/202848295-b8b91cb6-6fce-4b7f-8bdc-f683ca6f6028.png)
 
 ## 팀원 소개
-|이름|깃허브|역할|
-|----|---|---|
-|김다은|[GitHub](https://github.com/daeni-dang)|NCF 모델 연구 및 실험, FFM 모델에 k-fold 적용|
-|김동영|[GitHub](https://github.com/ktasha45)|deepconn 모델 고도화. deepconn+FFM 모델 개발. 하이퍼파라미터 튜닝 자동화|
-|김보성|[GitHub](https://github.com/bo-oseng)|Hybird Model(NCF + FFM) 실험, Custom Ensemble(Warm + Cold) 실험, lightFM 라이브러리 모델 연구 및 실험|
-|류지수|[GitHub](https://github.com/JisooRyu99)|FM, FFM 모델 연구 및 실험, EDA(결측치 보완), 하이퍼파라미터 튜닝 자동화|
-|홍재형|[GitHub](https://github.com/secrett2633)|CNN_FM 연구 및 실험, EDA(결측치 보완)|
-
+#### RecSys 14조 - **메뉴고르기힘드시조**
+| [<img src="https://github.com/daeni-dang.png" width="100px">](https://github.com/daeni-dang.png) | [<img src="https://github.com/ktasha45.png" width="100px">](https://github.com/ktasha45) | [<img src="https://github.com/bo-oseng.png" width="100px">](https://github.com/bo-oseng) | [<img src="https://github.com/JisooRyu99.png" width="100px">](https://github.com/JisooRyu99) | [<img src="https://github.com/secrett2633.png" width="100px">](https://github.com/secrett2633) |  
+| :---: | :---: | :---: | :---: | :---: |  
+| [김다은](https://github.com/daeni-dang) | [김동영](https://github.com/ktasha45) | [김보성](https://github.com/bo-oseng) | [류지수](https://github.com/JisooRyu99) | [홍재형](https://github.com/secrett2633) |
 
 ## 프로젝트 목표
  대한출판문화협회에 따르면 2021년 대한민국 신간 발행 책은 64,657권입니다. 책을 읽기 위해 소요되는 시간과 책을 구매하는 비용 측면에서 구매할 책을 선택하는 것은 중요한 문제입니다. 하지만 소비자는 제목, 저자, 표지, 카테고리 등 그 책의 정보와 타 구매자들의 리뷰와 평점만으로 책을 선택해야합니다.
@@ -21,7 +17,7 @@
 ```bash
 |📦 code
 |    |📂 data
-|        |📜 images
+|        |📂 images
 |        |📜 train_ratings.csv
 |        |📜 test_ratings.csv
 |        |📜 books.csv
